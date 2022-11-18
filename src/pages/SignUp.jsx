@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
+import {toast} from 'react-toastify';
+
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore';
 import {db} from '../firebase.config'; 
@@ -25,7 +27,7 @@ function SignUp() {
         }))
     }
 
-    const onSubmit = async () => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -44,7 +46,7 @@ function SignUp() {
 
             navigate('/');
         } catch(error) {
-            console.log(error)
+            toast.error('Oops... Something wrong!');
         }
     }
 
@@ -67,7 +69,7 @@ function SignUp() {
                         />
                         <input 
                             type='email' 
-                            className='emialInput' 
+                            className='emailInput' 
                             placeholder='Email' 
                             id='email' 
                             value={email} 
@@ -77,6 +79,7 @@ function SignUp() {
                             <input 
                                 type={showPassword ? 'text' : 'password'}
                                 className='passwordInput'
+                                placeholder='Password'
                                 id='password'
                                 value={password}
                                 onChange={onChange} 
