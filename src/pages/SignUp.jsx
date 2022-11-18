@@ -56,7 +56,6 @@ function SignUp() {
                 <header>
                     <p className="pageHeader">Sign Up</p>
                 </header>
-
                 <main>
                     <form onSubmit={onSubmit}>
                         <input 
