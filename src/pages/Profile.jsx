@@ -5,7 +5,7 @@ import {db} from '../firebase.config';
 import { Link, useNavigate } from 'react-router-dom';
 
 import {toast} from 'react-toastify';
-import arrowRight from '../assets/svg/keyboardArrowRightnIcon.svg';
+import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg';
 import homeIcon from '../assets/svg/homeIcon.svg';
 
 function Profile() {
